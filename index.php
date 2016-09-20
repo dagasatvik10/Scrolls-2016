@@ -772,25 +772,25 @@
                             </div>
                             <?php
 
-                            $courses_ch= curl_init();
-                            $courses_url="http://akgec-scrolls.com/rest/api/Domains/GetCourses";
-
-                            curl_setopt_array($courses_ch, array( CURLOPT_HTTPHEADER => array('Content-Type: application/json'),
-                                CURLOPT_RETURNTRANSFER => 1,
-                                CURLOPT_URL => $courses_url,
-                                CURLOPT_ENCODING => '',
-                            ));
-                            $courses= curl_exec($courses_ch);
-                            $courses=json_decode($courses);
-                            curl_close($courses_ch);
+                            // $courses_ch= curl_init();
+                            // $courses_url="http://akgec-scrolls.com/rest/api/Domains/GetCourses";
+														//
+                            // curl_setopt_array($courses_ch, array( CURLOPT_HTTPHEADER => array('Content-Type: application/json'),
+                            //     CURLOPT_RETURNTRANSFER => 1,
+                            //     CURLOPT_URL => $courses_url,
+                            //     CURLOPT_ENCODING => '',
+                            // ));
+                            // $courses= curl_exec($courses_ch);
+                            // $courses=json_decode($courses);
+                            // curl_close($courses_ch);
                             ?>
                             <div class="form-group col-sm-4 col-xs-4 gap-off">
                                 <label for=sel1>Course </label>
-                                <select class=textbox id=form-course name=course data-validation=required>
-                                    <?php foreach ($courses as $course) {
+                                <select class=textbox id="form-course" name=course data-validation=required>
+                                    <?php //foreach ($courses as $course) {
                                         ?>
-                                        <option value=<?php echo $course->CourseId; ?>><?php echo $course->CourseName; ?></option>
-                                    <?php } ?>
+                                        <!--option value=<?php //echo $course->CourseId; ?>><?php //echo $course->CourseName; ?></option-->
+                                    <?php //} ?>
                                 </select>
                             </div>
                             <div class="col-sm-4 gap-off col-xs-4">
@@ -805,28 +805,28 @@
                                 </div>
                             </div>
                             <?php
-                            $colleges_ch= curl_init();
-                            $colleges_url="http://akgec-scrolls.com/rest/api/Colleges/GetColleges";
-                            curl_setopt_array($colleges_ch, array( CURLOPT_HTTPHEADER => array('Content-Type: application/json'),
-                                CURLOPT_RETURNTRANSFER => 1,
-                                CURLOPT_URL => $colleges_url,
-
-                            ));
-                            $colleges= curl_exec($colleges_ch);
-                            $colleges=json_decode($colleges);
-                            curl_close($colleges_ch);
+                            // $colleges_ch= curl_init();
+                            // $colleges_url="http://akgec-scrolls.com/rest/api/Colleges/GetColleges";
+                            // curl_setopt_array($colleges_ch, array( CURLOPT_HTTPHEADER => array('Content-Type: application/json'),
+                            //     CURLOPT_RETURNTRANSFER => 1,
+                            //     CURLOPT_URL => $colleges_url,
+														//
+                            // ));
+                            // $colleges= curl_exec($colleges_ch);
+                            // $colleges=json_decode($colleges);
+                            // curl_close($colleges_ch);
                             ?>
                             <div class="form-group col-sm-4 col-xs-4 gap-off">
                                 <label for=sel1>College</label>
-                                <select class=textbox id=form-college name=college>
+                                <select class=textbox id="form-college" name=college>
                                     <option value=4>AJAY KUMAR GARG ENGINEERING COLLEGE</option>
-                                    <?php foreach ($colleges as $college) {
-                                        if($college->CollegeId!=4)
-                                        {
+                                    <?php //foreach ($colleges as $college) {
+                                        //if($college->CollegeId!=4)
+                                        //{
                                             ?>
-                                            <option value=<?php echo $college->CollegeId; ?>><?php echo $college->CollegeName; ?></option>
-                                        <?php }} ?>
-                                    <option value>OTHERS</option>
+                                            <!-- <option value=<?php //echo $college->CollegeId; ?>><?php //echo $college->CollegeName; ?></option> -->
+                                        <?php //}} ?>
+                                    <!-- <option value>OTHERS</option> -->
                                 </select>
                             </div>
                             <div class=form-group>
@@ -897,43 +897,43 @@
                             </div>
                             <br>
                             <?php
-                            $domains_ch= curl_init();
-                            $domains_url="http://akgec-scrolls.com/rest/api/Domains/GetDomains";
-                            curl_setopt_array($domains_ch, array( CURLOPT_HTTPHEADER => array('Content-Type: application/json'),
-                                CURLOPT_RETURNTRANSFER => 1,
-                                CURLOPT_URL => $domains_url,
-                            ));
-
-                            $domains= curl_exec($domains_ch);
-                            $domains=json_decode($domains);
-                            curl_close($domains_ch);
+                            // $domains_ch= curl_init();
+                            // $domains_url="http://akgec-scrolls.com/rest/api/Domains/GetDomains";
+                            // curl_setopt_array($domains_ch, array( CURLOPT_HTTPHEADER => array('Content-Type: application/json'),
+                            //     CURLOPT_RETURNTRANSFER => 1,
+                            //     CURLOPT_URL => $domains_url,
+                            // ));
+														//
+                            // $domains= curl_exec($domains_ch);
+                            // $domains=json_decode($domains);
+                            // curl_close($domains_ch);
 
                             ?>
                             <label style=margin-top:20px;display:block>Domain</label>
-                            <select class=textbox id=form-domains name=domains data-validation=required>
-                                <?php foreach ($domains as $domain) {
+                            <select class=textbox id="form-domains" name=domains data-validation=required>
+                                <?php //foreach ($domains as $domain) {
                                     ?>
-                                    <option value=<?php echo $domain->DomainId; ?>><?php echo $domain->DomainName; ?></option>
-                                <?php } ?>
+                                    <!-- <option value=<?php //echo $domain->DomainId; ?>><?php //echo $domain->DomainName; ?></option> -->
+                                <?php //} ?>
                             </select>
                             <?php
-                            $topics_ch= curl_init();
-                            $topics_url="http://akgec-scrolls.com/rest/api/Domains/GetTopics?domainId=6";
-                            curl_setopt_array($topics_ch, array( CURLOPT_HTTPHEADER => array('Content-Type: application/json'),
-                                CURLOPT_RETURNTRANSFER => 1,
-                                CURLOPT_URL => $topics_url,
-
-                            ));
-                            $topics= curl_exec($topics_ch);
-                            $topics=json_decode($topics);
-                            curl_close($topics_ch);
+                            // $topics_ch= curl_init();
+                            // $topics_url="http://akgec-scrolls.com/rest/api/Domains/GetTopics?domainId=6";
+                            // curl_setopt_array($topics_ch, array( CURLOPT_HTTPHEADER => array('Content-Type: application/json'),
+                            //     CURLOPT_RETURNTRANSFER => 1,
+                            //     CURLOPT_URL => $topics_url,
+														//
+                            // ));
+                            // $topics= curl_exec($topics_ch);
+                            // $topics=json_decode($topics);
+                            // curl_close($topics_ch);
                             ?>
                             <label style=margin-top:10px>Topic</label>
-                            <select class=textbox id=form-topics name=topics data-validation=required>
-                                <?php foreach ($topics as $topic) {
+                            <select class=textbox id="form-topics" name=topics data-validation=required>
+                                <?php //foreach ($topics as $topic) {
                                     ?>
-                                    <option value=<?php echo $topic->TopicId; ?>><?php echo $topic->TopicName; ?></option>
-                                <?php } ?>
+                                    <!--option value=<?php //echo $topic->TopicId; ?>><?php //echo $topic->TopicName; ?></option-->
+                                <?php //} ?>
                             </select>
                             <div class=form-group>
                                 <label for=pwd style=margin-top:10px>Password</label>
@@ -1024,5 +1024,6 @@
 <script>$(document).ready(function(){var b=$(".ham"),a=$(".overlay"),d=false;b.click(function(){c()});function c(){if(d==true){a.hide();b.removeClass("is-open");b.addClass("is-closed");d=false}else{a.show();b.removeClass("is-closed");b.addClass("is-open");d=true}}$('[data-toggle="offcanvas"]').click(function(){$("#wrapper").toggleClass("toggled")})});</script>
 <script>google.maps.event.addDomListener(window,"load",init);function init(){var b={zoom:15,scrollwheel:false,draggable:false,center:new google.maps.LatLng(28.676488,77.501936),styles:[{featureType:"all",elementType:"labels",stylers:[{visibility:"on"}]},{featureType:"administrative",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"administrative.neighborhood",elementType:"geometry",stylers:[{visibility:"off"}]},{featureType:"landscape",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"landscape.natural",elementType:"geometry.fill",stylers:[{visibility:"on"},{color:"#e0efef"}]},{featureType:"poi",elementType:"geometry.fill",stylers:[{visibility:"on"},{hue:"#1900ff"},{color:"#c0e8e8"}]},{featureType:"poi.attraction",elementType:"all",stylers:[{visibility:"on"},{hue:"#ff0000"}]},{featureType:"poi.attraction",elementType:"labels",stylers:[{visibility:"on"}]},{featureType:"poi.attraction",elementType:"labels.icon",stylers:[{hue:"#ff0000"},{saturation:"76"}]},{featureType:"poi.business",elementType:"all",stylers:[{visibility:"on"},{hue:"#ff0000"}]},{featureType:"poi.business",elementType:"labels.icon",stylers:[{hue:"#ff0000"},{visibility:"on"},{saturation:"66"}]},{featureType:"poi.government",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"poi.government",elementType:"labels.icon",stylers:[{hue:"#ff0000"},{saturation:"100"}]},{featureType:"poi.medical",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"poi.park",elementType:"all",stylers:[{visibility:"on"},{hue:"#00ff74"}]},{featureType:"poi.place_of_worship",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"poi.school",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"poi.sports_complex",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"road",elementType:"geometry",stylers:[{lightness:100},{visibility:"simplified"}]},{featureType:"road",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"road.highway",elementType:"all",stylers:[{visibility:"on"},{lightness:"10"},{saturation:"-23"},{gamma:"1.57"}]},{featureType:"road.highway",elementType:"geometry",stylers:[{visibility:"on"}]},{featureType:"road.highway",elementType:"geometry.fill",stylers:[{color:"#c2cacd"}]},{featureType:"road.highway.controlled_access",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"road.highway.controlled_access",elementType:"geometry",stylers:[{visibility:"on"}]},{featureType:"road.arterial",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"road.local",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"transit",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"transit.line",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"transit.line",elementType:"geometry",stylers:[{visibility:"on"},{lightness:700}]},{featureType:"transit.station",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"transit.station.bus",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"transit.station.rail",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"water",elementType:"all",stylers:[{color:"#77c9c9"},{visibility:"on"}]}]};var c=document.getElementById("map");var d=new google.maps.Map(c,b);var a=new google.maps.Marker({position:new google.maps.LatLng(28.676488,77.501936),map:d,title:"Snazzy!"})}</script>
 <script>$(window).load(function(){$(".se-pre-con").fadeOut("slow")});</script>
+<script src="asset/js/ajax_get_data.js"></script>
 </body>
 </html>
